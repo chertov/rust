@@ -108,7 +108,7 @@ struct f32x4(f32, f32, f32, f32);
 #[repr(transparent)]
 pub struct Vector(f32x4);
 
-// CHECK: define <4 x float> @test_Vector(<4 x float> %arg0)
+// CHECK: define <4 x float> @test_Vector(<4 x float>* %arg0)
 #[no_mangle]
 pub extern fn test_Vector(_: Vector) -> Vector { loop {} }
 
